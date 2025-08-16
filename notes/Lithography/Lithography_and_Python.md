@@ -50,3 +50,19 @@ Projects to Try:
 A CLI or GUI tool for resist profile simulation
 
 Python wrapper for litho simulator input/output automation
+
+
+
+******************************************************************
+
+Key features (especially dev tool features or procedural systems)
+
+Tech stack (Python, Electron, etc.)
+
+Screenshots or demos
+
+How to run it (setup, dependencies)
+
+Why it matters (use cases, innovation, your role)
+*****************************************************************
+
