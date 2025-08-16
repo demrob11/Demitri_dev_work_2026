@@ -16,6 +16,9 @@ git commit -m "Your commit message here"
 git push  (pushes changes)
 **********************************
 
+git add -A        #add all changes
+**********************************
+
 __________________________________________________________________________________
 
 # Make the folder
