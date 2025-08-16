@@ -12,3 +12,7 @@ git remote -v
 
 git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 ***************************************************************
+
+# Force Push
+
+git push -u origin main --force
