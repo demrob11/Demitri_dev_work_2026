@@ -40,13 +40,37 @@ git rm -r MyEmptyFolder
 git commit -m "Delete MyEmptyFolder"
 ***********************************************************************
 
-# Remove all empty folders (keep locally)
+# Git Remove all empty folders (keep locally)
 
 git ls-files "*.gitkeep" | ForEach-Object { git rm --cached $_ }
 
 git commit -m "Remove empty folders from repo"
 git push
 
+# Move a file to another directory
+
+Move-Item "C:\Path\To\File.txt" "C:\New\Directory\"
+**********************************************************************
+
+# Overwrite without prompting (pS7+)
+
+Move-Item "C:\Path\To\File.txt" "C:\New\Directory\" -Force
+**********************************************************************
+
+# Move several specific files:
+
+Move-Item "C:\Path\To\File1.txt","C:\Path\To\File2.txt","C:\Path\To\File3.txt" "C:\New\Directory\"
+**********************************************************************
+
+# Move all files of a certain type from one folder:
+
+Move-Item "C:\Path\To\*.txt" "C:\New\Directory\"
+**********************************************************************
+
+# Move multiple different extensions
+
+Move-Item "C:\Path\To\*.txt","C:\Path\To\*.docx" "C:\New\Directory\"
+***********************************************************************
 
 
 
