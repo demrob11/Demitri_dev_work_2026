@@ -40,6 +40,14 @@ git rm -r MyEmptyFolder
 git commit -m "Delete MyEmptyFolder"
 ***********************************************************************
 
+# Remove all empty folders (keep locally)
+
+git ls-files "*.gitkeep" | ForEach-Object { git rm --cached $_ }
+
+git commit -m "Remove empty folders from repo"
+git push
+
+
 
 
 
