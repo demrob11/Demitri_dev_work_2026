@@ -1,0 +1,53 @@
+# Obfuscated content (Base64-encoded lines)
+$encodedLines = @(
+    "R2l0IFBvd2VyU2hlbGwgQWxpYXMgTWFwOiBBIFZpc3VhbCBJbnRyb2R1Y3Rpb24=",
+    "LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t",
+    "",
+    "R2l0IENvbW1hbmQgU3RydWN0dXJlOg==",
+    "ICAgIFtnaXRd",
+    "ICAgICAgIHw=",
+    "IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t",
+    "ICB8ICAgICAgIHwgICAgICAgIHw=",
+    "W3N0YXR1c10gICBbY29tbWl0XSAgICBbY2hlY2tvdXRd",
+    "ICAgIHwgICAgICAgIHwgICAgICAgIHw=",
+    "IFthbGlhc10gICAgW2FsaWFzXSBbYWxpYXNd",
+    "",
+    "QWxpYXMgSGllcmFyY2h5Og==",
+    "ICAgIFtnaXRdIC0tPiBbZ10gKHNob3J0IGFsaWFzKQ==",
+    "",
+    "ICAgIFtnXSAtLT4gW2dzXSAgIOKAlCBnaXQgc3RhdHVz",
+    "ICAgICAgIC0tPiBbZ2NdICAg4oCUIHBhc3MgLS1t",
+    "ICAgICAgIC0tPiBbZ2FdICAg4oCUIGdpdCBhZGQgLg==",
+    "ICAgICAgIC0tPiBbZ2xdICAg4oCUIGdpdCBsb2cgLS1vbmxpbmUgLS1ncmFwaCAtLWRlY29yYXRl",
+    "ICAgICAgIC0tPiBbZ3BdICAg4oCUIGdpdCBwdXNo",
+    "ICAgICAgIC0tPiBbZ3BvXSBg4oCUIGdpdCBwdXNoIG9yaWdpbg==",
+    "ICAgICAgIC0tPiBbZ2JdICAg4oCUIGdpdCBicmFuY2g=",
+    "ICAgICAgIC0tPiBbZ2NvXSBg4oCUIGdpdCBjaGVja291dA==",
+    "ICAgICAgIC0tPiBbZ2NtXSBg4oCUIGdpdCBjaGVja291dCBtYWlu",
+    "",
+    "SG93IHRvIERlZmluZSBUaGVzZSBpbiBQb3dlclNoZWxsOg==",
+    "ICAgIFNldC1BbGlhcyBncyAiZ2l0IHN0YXR1cyI=",
+    "ICAgIFNldC1BbGlhcyBnYyAiZ2l0IGNvbW1pdCAtbSI=",
+    "ICAgIFNldC1BbGlhcyBnYSAiZ2l0IGFkZCAuIg==",
+    "ICAgIFNldC1BbGlhcyBnY28gImdpdCBjaGVja291dCI=",
+    "",
+    "UmV1c2FibGUgRnVuY3Rpb25zOg==",
+    "ICAgIGZ1bmN0aW9uIGdjbSB7IGdpdCBjaGVja291dCBtYWluIH0=",
+    "ICAgIGZ1bmN0aW9uIGdsICB7IGdpdCBsb2cgLS1vbmxpbmUgLS1ncmFwaCAtLWRlY29yYXRlIH0=",
+    "",
+    "Q29uY2VwdCBTdW1tYXJ5Og==",
+    "ICAgIC0gVXNlICdnJyBhcyB5b3VyIGJhc2UgYWxpYXM=",
+    "ICAgIC0gQnVpbGQgaW50dWl0aXZlIHNob3J0IGFsaWFzZXMgZm9yIGZyZXF1ZW50IGNvbW1hbmRz",
+    "ICAgIC0gRW5jYXBzdWxhdGUgbG9naWMgaW4gZnVuY3Rpb25zIGZvciBjbGFyaXR5IGFuZCByZXVzZQ==",
+    "ICAgIC0gQWxpYXNlcyBzdHJlYW1saW5lIEdpdCB3b3JrZmxvd3Mg4oCUIGVzcGVjaWFsbHkgaW4gUG93ZXJTaGVsbA=="
+)
+
+# Decode and display each line
+foreach ($encoded in $encodedLines) {
+    if ($encoded -ne "") {
+        $decoded = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($encoded))
+        Write-Host $decoded -ForegroundColor Cyan
+    } else {
+        Write-Host ""
+    }
+}
