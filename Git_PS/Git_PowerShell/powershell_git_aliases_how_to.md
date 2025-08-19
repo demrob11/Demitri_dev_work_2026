@@ -70,6 +70,10 @@ function ga { git add $args }
 function gp { git push }
 function gl { git log --oneline --graph --decorate }
 ```
+### Create Profile
+if (!(Test-Path -Path $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force
+}
 
 ### 3. Reload Profile
 ```powershell
