@@ -1,0 +1,93 @@
+## 🧮 Two's Complement Explained in Detail
+
+Two's complement is the **standard way to represent signed integers** in binary used by virtually all modern computers. It enables computers to perform addition, subtraction, and bitwise operations consistently on both positive and negative numbers.
+
+---
+
+## 🔍 Why Do We Need Two's Complement?
+
+Computers operate using binary (0s and 1s). While unsigned integers are easy (they're just binary), signed integers require a scheme to represent both positive and negative numbers **in the same fixed number of bits** (usually 8, 16, 32, or 64).
+
+The main goals:
+- Support negative numbers
+- Allow binary addition/subtraction to work uniformly
+- Avoid having two representations of 0
+
+---
+
+## 🧠 Key Concepts
+
+### 1. **Positive Numbers**
+They're represented just like regular binary:
+```text
+Decimal:  5
+Binary:   00000101 (8-bit)
+```
+
+### 2. **One's Complement (NOT Final)**
+To represent `-x`, one method is to flip all the bits of `x`:
+```text
+Decimal:  -5 (One's complement)
+Binary:   11111010 (flip of 00000101)
+```
+⚠️ Problem: One's complement has **two zeros** (`00000000` and `11111111`) which complicates arithmetic.
+
+### 3. **Two's Complement (Final & Used)**
+Two's complement solves this by **adding 1** to the one's complement:
+```text
+Step 1:  One's complement of 5 → 11111010
+Step 2:  Add 1 → 11111011
+Result:  -5 in two's complement = 11111011
+```
+
+Now:
+```text
++5 = 00000101
+-5 = 11111011
+```
+
+---
+
+## ✅ Why It Works
+
+The real magic of two's complement is that it makes addition work automatically:
+```python
+# Python example:
+5 + (-5) = 00000101 + 11111011 = 00000000  (carry is discarded)
+```
+
+It also removes the need for separate subtraction logic.
+
+---
+
+## 🔄 Range of Values
+In N-bit two's complement:
+- Minimum = `-2^(N-1)`
+- Maximum = `2^(N-1) - 1`
+
+Example (8-bit):
+```text
+Range = -128 to +127
+```
+
+---
+
+## 🧩 Fast Algorithm for Two’s Complement of x
+1. Start with binary of `x`
+2. Invert all bits
+3. Add 1
+
+Or:
+> Find the first `1` from the right and **leave it and everything after unchanged**, then invert the rest.
+
+---
+
+## 📌 Takeaways
+- Two's complement ensures **only one zero**
+- Allows unified addition/subtraction logic
+- Used in virtually every CPU architecture
+- Formula: `~x + 1 = -x`
+
+---
+
+Let me know if you'd like to add bit diagrams or real-world applications!

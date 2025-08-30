@@ -1,0 +1,116 @@
+## 🔧 What is Bitwise?
+
+Bitwise operations manipulate **individual bits** of integers. Integers are stored in binary (0s and 1s), and bitwise operators let you operate on those bits directly.
+
+Example:
+```python
+5  =  0b0101
+3  =  0b0011
+```
+
+---
+
+## 🧮 Common Bitwise Operators
+
+| Operator | Symbol | Description                  | Example              |
+|----------|--------|------------------------------|----------------------|
+| AND      | `&`    | 1 if **both** bits are 1     | `5 & 3 = 1` (0b0001) |
+| OR       | `|`    | 1 if **either** bit is 1     | `5 | 3 = 7` (0b0111) |
+| XOR      | `^`    | 1 if bits are **different**  | `5 ^ 3 = 6` (0b0110) |
+| NOT      | `~`    | **Flips** all bits           | `~5 = -6`            |
+| Left Shift  | `<<` | Shifts bits left (×2 power)  | `5 << 1 = 10`        |
+| Right Shift | `>>` | Shifts bits right (÷2 power) | `5 >> 1 = 2`         |
+
+---
+
+### ⚙️ Example Breakdown
+
+#### `5 & 3`
+```
+  5 = 0101
+  3 = 0011
+&-----------
+      0001 = 1
+```
+
+#### `5 | 3`
+```
+  5 = 0101
+  3 = 0011
+|-----------
+      0111 = 7
+```
+
+#### `5 ^ 3` (XOR)
+```
+  5 = 0101
+  3 = 0011
+^-----------
+      0110 = 6
+```
+
+---
+
+## 🧨 The Confusing One: `~` (Bitwise NOT)
+
+Bitwise NOT flips all bits — but remember, Python uses **two's complement** to represent negative numbers.
+
+So:
+```python
+~5 = -6
+```
+
+**Why?**
+```
+~x = -(x + 1)
+```
+
+Examples:
+```python
+~5 = -(5 + 1) = -6
+~0 = -1
+~-1 = 0
+```
+
+---
+
+## 🚀 Shift Operators
+
+These are like moving digits left or right in binary — multiplying or dividing by 2.
+
+```python
+x = 4  # 0b0100
+
+x << 1  # 0b1000 → 8  (same as 4 * 2)
+x >> 1  # 0b0010 → 2  (same as 4 // 2)
+```
+
+---
+
+## 🧠 Why Learn Bitwise?
+
+Bitwise is powerful in:
+- Embedded / firmware / device control
+- Data compression and encryption
+- Performance-optimized logic (flags, masks, toggles)
+- Interview questions & coding puzzles
+
+---
+
+## 🛠 Practice Tip
+
+Try writing out a few binary values manually and applying bitwise logic by hand. This builds fast intuition.
+
+Example:
+```python
+x = 12  # 0b1100
+y = 6   # 0b0110
+
+print(x & y)  # → 4 (0b0100)
+print(x | y)  # → 14 (0b1110)
+print(x ^ y)  # → 10 (0b1010)
+```
+
+---
+
+Want a practice set or cheat sheet next?
